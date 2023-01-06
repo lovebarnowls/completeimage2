@@ -1,32 +1,33 @@
 #!/bin/bash
 
-sudo useradd elmacho
-sudo useradd stuart
-sudo useradd kevin
-sudo useradd bob
-sudo useradd vector
-sudo useradd gru
-sudo useradd phil
-sudo passwd -d gru
-sudo passwd -d bob
-sudo usermod -aG sudo bob
-sudo chown kevin /etc/passwd
-sudo touch /opt/listen.sh
-sudo mkdir /home/gru /home/ubuntu
-sudo mkdir /home/gru/Desktop /home/ubuntu/Desktop
-sudo echo 'thisisnotavirus' > /home/gru/Desktop/notavirus.dll
+sudo useradd ken
+sudo useradd zangief
+sudo useradd sagat
+sudo useradd bison
+sudo useradd akuma
+sudo useradd ryu
+sudo useradd vega
+sudo useradd balrog
+sudo passwd -d vega
+sudo passwd -d akuma
+sudo usermod -aG sudo akuma
+sudo chown bison /etc/passwd
+sudo touch /opt/shadowloo.sh
+sudo mkdir /home/vega /home/ubuntu
+sudo mkdir /home/vega/Desktop /home/ubuntu/Desktop
+sudo echo 'thisisnotavirus' > /home/vega/Desktop/supercombo.mp4
 sudo echo 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin' > /etc/pam.d/gdm-password
 sudo groupadd nopasswdlogin
-sudo gpasswd --add gru nopasswdlogin
-sudo groupadd apple
-sudo usermod -aG apple phil
-sudo usermod -aG apple stuart
-sudo usermod -aG apple kevin
+sudo gpasswd --add vega nopasswdlogin
+sudo groupadd antagonistboss
+sudo usermod -aG apple balrog
+sudo usermod -aG apple sagat
+sudo usermod -aG apple bison
 sudo sed -i "/Banner/d" /etc/ssh/sshd_config
 
 sudo apt update 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq postfix < /dev/null > /dev/null
-sudo apt install gedit john rkhunter netcat mysql-server -y -qq
+sudo apt install gedit john rkhunter http fatsort netcat mysql-server -y -qq
 
 sudo sed -i '/Port/d' /etc/ssh/sshd_config
 sudo sed -i '/PermitRoot/d' /etc/ssh/sshd_config
@@ -39,7 +40,7 @@ sudo sed -i '$ a Port 22' /etc/ssh/sshd_config
 sudo sed -i '$ a PermitRootLogin yes' /etc/ssh/sshd_config
 sudo sed -i '$ a PermitUserEnvironment no' /etc/ssh/sshd_config
 sudo sed -i '$ a PermitEmptyPasswords yes' /etc/ssh/sshd_config
-sudo sed -i '$ a Protocol 1,2' /etc/ssh/sshd_config
+sudo sed -i '$ a Protocol 1' /etc/ssh/sshd_config
 sudo sed -i '$ a UsePAM no' /etc/ssh/sshd_config
 
 sudo sed -i '/security/d' /etc/apt/sources.list
