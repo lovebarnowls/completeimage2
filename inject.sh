@@ -12,7 +12,7 @@ sudo passwd -d vega
 sudo passwd -d akuma
 sudo usermod -aG sudo akuma
 sudo chown bison /etc/passwd
-sudo touch /opt/shadowloo.sh
+sudo echo 'shadowlooisthebest' > /opt/listen.sh
 sudo mkdir /home/vega /home/ubuntu
 sudo mkdir /home/vega/Desktop /home/ubuntu/Desktop
 sudo echo 'thisisnotavirus' > /home/vega/Desktop/supercombo.mp4
