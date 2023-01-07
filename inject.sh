@@ -49,7 +49,7 @@ sudo ln -s /home/bison/Desktop/filehere/orhere/orthere/possiblelink.txt /home/ve
 
 sudo apt update 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq postfix < /dev/null > /dev/null
-sudo apt install gedit vim atom john rkhunter fatsort netcat mysql-server -y -qq
+sudo apt install gedit vim sqlite3 john rkhunter fatsort netcat mysql-server -y -qq
 
 sudo sed -i '/Port/d' /etc/ssh/sshd_config
 sudo sed -i '/PermitRoot/d' /etc/ssh/sshd_config
