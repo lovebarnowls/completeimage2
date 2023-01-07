@@ -24,6 +24,9 @@ sudo usermod -aG antagonistboss balrog
 sudo usermod -aG antagonistboss sagat
 sudo usermod -aG antagonistboss bison
 sudo sed -i "/Banner/d" /etc/ssh/sshd_config
+sudo mkdir -p /home/sagat/Desktop/message/inhere
+sudo echo 'AGEAbgBnAHIAeQAgAHMAYwBhAHI=' >  /home/sagat/Desktop/message/my\ message.txt
+sudo echo 'thaifoodisawesome' > /home/sagat/Desktop/message/inhere/.q7.txt
 
 sudo apt update 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq postfix < /dev/null > /dev/null
