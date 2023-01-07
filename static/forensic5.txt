@@ -1,11 +1,5 @@
-Forensic Questions 5 to 8 are ADDITIONAL practice questions.
-They DO NOT count towards the scoring, but are meant for teams that have finished their forensics questions early to get extra practice.
-
-They will be presented in a similar format as the other forensic questions, but the answer to the forensic question can only be found in the file forensic9.txt.
-
-State the url listed in Pipfile
-
-eg: https://github.com/lovebarnowls
+sagat has another message file found somewhere in his desktop.
+What is the message?
 
 ANSWER: <Type answer here>
 
