@@ -20,9 +20,9 @@ sudo echo 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin' > /etc/
 sudo groupadd nopasswdlogin
 sudo gpasswd --add vega nopasswdlogin
 sudo groupadd antagonistboss
-sudo usermod -aG apple balrog
-sudo usermod -aG apple sagat
-sudo usermod -aG apple bison
+sudo usermod -aG antagonistboss balrog
+sudo usermod -aG antagonistboss sagat
+sudo usermod -aG antagonistboss bison
 sudo sed -i "/Banner/d" /etc/ssh/sshd_config
 
 sudo apt update 
