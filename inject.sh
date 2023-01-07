@@ -24,9 +24,28 @@ sudo usermod -aG antagonistboss balrog
 sudo usermod -aG antagonistboss sagat
 sudo usermod -aG antagonistboss bison
 sudo sed -i "/Banner/d" /etc/ssh/sshd_config
-sudo mkdir -p /home/sagat/Desktop/message/inhere
+sudo mkdir -p /home/sagat/Desktop/message/.dir4
+sudo mkdir -p /home/sagat/Desktop/message/dir3
+sudo mkdir -p /home/sagat/Desktop/message/dir2
+sudo mkdir -p /home/sagat/Desktop/message/dir1
+
 sudo echo 'AGEAbgBnAHIAeQAgAHMAYwBhAHI=' >  /home/sagat/Desktop/message/my\ message.txt
-sudo echo 'thaifoodisawesome' > /home/sagat/Desktop/message/inhere/.q7.txt
+sudo echo 'thaifoodisawesome' > /home/sagat/Desktop/message/.dir4/.hiddenmessage.txt
+sudo touch /home/sagat/Desktop/message/dir1/hiddenmessage.txt
+sudo touch /home/sagat/Desktop/message/dir2/hiddenmessage.txt
+sudo touch /home/sagat/Desktop/message/dir3/hiddenmessage.txt
+sudo touch /home/sagat/Desktop/hiddenmessage.txt
+
+sudo mkdir -p /home/vega/Desktop/filehere
+sudo mkdir -p /home/bison/Desktop/filehere/orhere/orthere/oranywhere
+
+
+sudo echo 'maybethis' > /home/bison/Desktop/filehere/possiblelink.txt
+sudo echo 'orthis' > /home/bison/Desktop/filehere//orhere/possiblelink.txt
+sudo echo 'orthat' > /home/bison/Desktop/filehere/orhere/orthere/possiblelink.txt
+sudo echo 'orthat' > /home/bison/Desktop/filehere/orhere/orthere/possiblelink.txt
+sudo echo 'orthat' > /home/bison/Desktop/filehere/orhere/orthere/oranywhere/possiblelink.txt
+sudo ln -s /home/bison/Desktop/filehere/orhere/orthere/possiblelink.txt /home/vega/Desktop/filehere/linked.txt
 
 sudo apt update 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq postfix < /dev/null > /dev/null
