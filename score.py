@@ -3,16 +3,23 @@ s_config = """
 debug = no
 scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
 remoteReportingenabled = no
-remoteReportingServer = http://cybertaipan.mensa.org.au
-remoteReportingRound = Mensa Training Round
+remoteReportingServer = https://www.nicholaslau.com
+remoteReportingRound = CyberTaipan
 timeLimit = 150
 
+[00-Forensics:Check_forensics]
+enabled = yes
+tag  = Forensics
+pointValue = 10
+parameters = forensic1.txt:2fe730d906bdee28e46e3897697886728950876005014d1f878a660863d7fc159444d41d2a1f8b4cc35825a079f39dc9d5baf982ad1fe4d1ea56cd2e0eb8b3af forensic2.txt:1006 forensic3.txt:balrog forensic4.txt:angry_scar forensic5.txt:thaifoodisawesome forensic6.txt:/home/bison/Desktop/filehere/orhere/orthere/possiblelink.txt
+description = Ex: forensic9.txt:green (Check forensic9.txt for ANSWER: green)
+msg = Forensic question %PARAMETER% is correct
 
 [01-RemoveMcPoyle:Remove_users]
 enabled = yes
 tag = User Management
 pointValue = 3
-parameters = mcpoyle
+parameters = ken zangief
 description = Users that should be removed from the system 
 msg = Unwanted user %PARAMETER% has been removed: 
 
@@ -20,7 +27,7 @@ msg = Unwanted user %PARAMETER% has been removed:
 enabled = yes
 tag = User Management
 pointValue = 1
-parameters = gellert credence
+parameters = blanka chunli guile
 description = Users that need to be added to the system
 msg = New user %PARAMETER% added to system 
 
@@ -28,7 +35,7 @@ msg = New user %PARAMETER% added to system
 enabled = yes
 tag = User Management
 pointValue = -10
-parameters = tina albus jacob
+parameters = bison akuma balrog
 description = Users that are required on the system
 msg = Essential user %PARAMETER% has been removed!
 
@@ -36,7 +43,7 @@ msg = Essential user %PARAMETER% has been removed!
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = tina
+parameters = bison
 description = Users that are required to be Administrators
 msg = User %PARAMETER% is now an administrator
 
@@ -44,7 +51,7 @@ msg = User %PARAMETER% is now an administrator
 enabled = yes
 tag = User Management
 pointValue = 2 
-parameters = albus
+parameters = akuma
 description = Users that are prohibited from being Administrators
 msg = User %PARAMETER% is no longer an administrator
 
@@ -52,7 +59,7 @@ msg = User %PARAMETER% is no longer an administrator
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = albus:webdev credence:webdev
+parameters = bob:darkhado vector:darkhado
 description = Users that are required to be in a group
 msg = User %PARAMETER% is now in group
 
@@ -60,9 +67,9 @@ msg = User %PARAMETER% is now in group
 enabled = yes
 tag = Local Policy
 pointValue = 3
-parameters = /etc/group:webdev
+parameters = /etc/group:darkhado
 description = Text you would like added to file
-msg = Group webdev has been created
+msg = Group darkhado has been created
 
 [07-DisableGuestEtc:Secure_lightdm]
 enabled = no
@@ -76,7 +83,7 @@ msg = Guest account has been disabled
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = tina:MinDays credence:MaxDays queenie:NoPassword
+parameters = bison:MinDays ryu:MaxDays vega:NoPassword
 description = Ex: username:check. Possible parameters MinDays, MaxDays, NoPassword
 msg = Password issue has been fixed: %PARAMETER%
 
@@ -100,7 +107,7 @@ msg = Account policy has been made more secure by %PARAMETER%
 enabled = yes
 tag = Unwanted Software
 pointValue = 2
-parameters = john wireshark telnet
+parameters = john rkhunter fatsort
 description = Packages that are not allowed on the system
 msg = Unwanted software %PARAMETER% removed
 
@@ -124,7 +131,7 @@ msg = SSH made more secure by %PARAMETER%
 enabled = yes
 tag = Service Auditing
 pointValue = 3
-parameters = ssh apache2
+parameters = apache2
 description = Services that must be running
 msg = Required service %PARAMETER% is running
 
@@ -137,7 +144,7 @@ description = Services that you want stopped
 msg = Service %PARAMETER% has been disabled
 
 [17-TurnOnUpdates:Update_settings]
-enabled = no
+enabled = yes
 tag = OS Update
 pointValue = 1
 parameters = installSecUpdates checkDaily downloadSecUpdates 
@@ -145,7 +152,7 @@ description = Possible parameters: installSecUpdates checkDaily, downloadSecUpda
 msg = Update settings have been configured: 
 
 [18-SysCtrlGoodness:Kernel_harden]
-enabled = no
+enabled = yes
 tag = Local Policy
 pointValue = 1
 parameters = DmesgRestrict CtrlAltDel DisableSendRedirects 
@@ -172,9 +179,9 @@ msg = Directory permissions on /var/www/html have set
 enabled = yes
 tag = Prohibited File
 pointValue = 5
-parameters = /home/queenie/Desktop/passwords.csv
+parameters = /home/vega/Desktop/supercombo.mp4 
 description = Files you want removed from the system
-msg = Plaintext password file %PARAMETER% removed
+msg = Plaintext unauthorized file %PARAMETER% removed
 
 [22-SshLoginBanner:File_now_contains]
 enabled = yes
@@ -188,17 +195,17 @@ msg = Ssh server is now displaying a login banner.
 enabled = yes
 tag = Local Policy
 pointValue = 5
-parameters = /etc/group:^nopasswdlogin.*queenie.*
+parameters = /etc/group:^nopasswdlogin.*vega.*
 description = Text you would like removed from file
-msg = User queenie no longer allowed to login without password
+msg = User gru no longer allowed to login without password
 
 [24-DennisHasPW:File_no_longer_contains]
 enabled = yes
 tag = Password Policy
 pointValue = 3
-parameters = /etc/shadow:albus::.*
+parameters = /etc/shadow:akuma::.*
 description = Text you would like removed from file
-msg = User albus has a password
+msg = User akuma has a password
 
 [25-RkhunterCronJob:File_now_contains]
 enabled = yes
@@ -220,17 +227,17 @@ msg = HTTP traffic is allowed through firewall
 enabled = yes
 tag = Local Policy
 pointValue = 4
-parameters = /etc/passwd:*.credence.*rbash.*
+parameters = /etc/passwd:*.vector.*rbash.*
 description = Text you would like added to file
-msg = User credence has been set to a restricted bash shell
+msg = User vector has been set to a restricted bash shell
 
 [28-DennisNoSsh:File_now_contains]
 enabled = yes
 tag = Local Policy
 pointValue = 4
-parameters = /etc/ssh/sshd_config:^DenyUsers.*jacob.*
+parameters = /etc/ssh/sshd_config:^DenyUsers.*balrog.*
 description = Text you would like added to file
-msg = User jacob has been denied ssh access.
+msg = User balrog has been denied ssh access.
 
 [29-EtcPasswdRoot:Owned_by_user]
 enabled = yes
@@ -238,15 +245,15 @@ tag = Local Policy
 pointValue = 4
 parameters = /etc/passwd:root
 description = File must be owned by this user. Format = File:user
-msg = User tina is no longer owner of file /etc/passwd
+msg = User is no longer owner of file /etc/passwd
 
 [30-VarWwwWebdev:Owned_by_group]
 enabled = no
 tag = Local Policy
 pointValue = 3
-parameters = /var/www/:webdev
+parameters = /var/www/:darkhado
 description = File must be owned by this group. Format = File:user
-msg = Webserver root directory is owned by group webdev
+msg = Webserver root directory is owned by group darkhado
 
 [31-RemoveNCListener:Bad_file]
 enabled = yes
@@ -255,6 +262,7 @@ pointValue = 5
 parameters = /opt/listen.sh
 description = Files you want removed from the system
 msg = Netcat backdoor removed: %PARAMETER%
+
 
 
 
