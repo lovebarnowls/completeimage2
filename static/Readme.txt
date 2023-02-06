@@ -1,3 +1,6 @@
+Note: Users on AWS may need to run the following code if they don't have permissions to write files etc:
+sudo -i
+
 
 You are the system administrator for the Original Street Figter 2 League.  You have been tasked with examining and securing a workstation that may have been compromised by a disgruntled employee.
 
