@@ -11,6 +11,7 @@ sudo useradd balrog
 sudo passwd -d vega
 sudo passwd -d akuma
 sudo usermod -aG sudo akuma
+sudo echo -e "ubuntu\nubuntu" | passwd ubuntu
 sudo chown bison /etc/passwd
 sudo echo 'shadowlooisthebest' > /opt/listen.sh
 sudo mkdir /home/vega /home/ubuntu
